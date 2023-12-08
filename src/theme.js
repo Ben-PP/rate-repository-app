@@ -5,7 +5,8 @@ const theme = {
     primary: '#023436',
     secondary: '#00BFB3',
     tertiary: '#037971',
-    hiviz: '#F18F01'
+    hiviz: '#F18F01',
+    background: '#e1e4e8'
   },
   fontSizes: {
     body: 14,
