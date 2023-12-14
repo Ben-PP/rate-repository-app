@@ -1,13 +1,13 @@
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable'
+import { Link } from 'react-router-native'
 import Text from './Text'
 
-const AppBarTab = ({ text, onPress }) => {
+const AppBarTab = ({ text, route }) => {
   return (
-    <Pressable onPress={onPress}>
+    <Link to={route}>
       <Text color='primary' fontWeight='bold' fontSize='subheading'>
         {text}
       </Text>
-    </Pressable>
+    </Link>
   )
 }
 
