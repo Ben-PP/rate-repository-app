@@ -1,7 +1,9 @@
-import { StyleSheet, View, Image } from 'react-native'
+import { StyleSheet, View, Image, Pressable } from 'react-native'
+import { useNavigate } from 'react-router-native'
 import theme from '../../theme'
 import Text from '../common/Text'
 import StatItem from './StatItem'
+import SingleView from './SingleView'
 
 const styles = StyleSheet.create({
   avatar: {
@@ -43,28 +45,32 @@ const styles = StyleSheet.create({
   }
 })
 
-const RepositoryItem = ({ props }) => {
-  const item = props.item
-
+const RepositoryItem = ({ item, isSingleView = false }) => {
+  const navigate = useNavigate()
   return (
-    <View testID='repositoryItem' style={styles.card}>
-      <View style={styles.row}>
-        <Image style={styles.avatar} source={{ uri: item.ownerAvatarUrl }} />
-        <View style={styles.bioDetails}>
-          <Text style={{ fontWeight: theme.fontWeights.bold }}>
-            {item.fullName}
-          </Text>
-          <Text>{item.description}</Text>
-          <Text style={styles.tagItem}>{item.language}</Text>
+    <Pressable
+      onPress={() => !isSingleView && navigate(`/repository/${item.id}`)}
+    >
+      <View testID='repositoryItem' style={styles.card}>
+        <View style={styles.row}>
+          <Image style={styles.avatar} source={{ uri: item.ownerAvatarUrl }} />
+          <View style={styles.bioDetails}>
+            <Text style={{ fontWeight: theme.fontWeights.bold }}>
+              {item.fullName}
+            </Text>
+            <Text>{item.description}</Text>
+            <Text style={styles.tagItem}>{item.language}</Text>
+          </View>
         </View>
+        <View style={styles.statsRow}>
+          <StatItem label='Stars' number={item.stargazersCount} />
+          <StatItem label='Forks' number={item.forksCount} />
+          <StatItem label='Reviews' number={item.reviewCount} />
+          <StatItem label='Rating' number={item.ratingAverage} />
+        </View>
+        {isSingleView && <SingleView url={item.url} />}
       </View>
-      <View style={styles.statsRow}>
-        <StatItem label='Stars' number={item.stargazersCount} />
-        <StatItem label='Forks' number={item.forksCount} />
-        <StatItem label='Reviews' number={item.reviewCount} />
-        <StatItem label='Rating' number={item.ratingAverage} />
-      </View>
-    </View>
+    </Pressable>
   )
 }
 
