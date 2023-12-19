@@ -1,7 +1,7 @@
 import { StyleSheet, View, Image } from 'react-native'
-import theme from '../theme'
-import Text from './Text'
-import StatItem from './StatItem'
+import theme from '../../theme'
+import Text from '../Text'
+import StatItem from '../StatItem'
 
 const styles = StyleSheet.create({
   avatar: {
@@ -45,8 +45,9 @@ const styles = StyleSheet.create({
 
 const RepositoryItem = ({ props }) => {
   const item = props.item
+
   return (
-    <View style={styles.card}>
+    <View testID='repositoryItem' style={styles.card}>
       <View style={styles.row}>
         <Image style={styles.avatar} source={{ uri: item.ownerAvatarUrl }} />
         <View style={styles.bioDetails}>

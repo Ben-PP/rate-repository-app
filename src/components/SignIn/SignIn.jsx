@@ -1,12 +1,11 @@
 import { useQuery } from '@apollo/client'
 import { StyleSheet, Pressable, Text, View } from 'react-native'
-import { Formik } from 'formik'
-import * as yup from 'yup'
+
 import SignInForm from './SignInForm'
-import useSignIn from '../hooks/useSignIn'
+import useSignIn from '../../hooks/useSignIn'
 import { useNavigate } from 'react-router-native'
-import { GET_AUTHENTICATED_USER } from '../graphql/queries'
-import theme from '../theme'
+import { GET_AUTHENTICATED_USER } from '../../graphql/queries'
+import theme from '../../theme'
 
 const styles = StyleSheet.create({
   container: {
@@ -22,11 +21,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5
   }
-})
-
-const validationSchema = yup.object().shape({
-  username: yup.string().required('Username is required'),
-  password: yup.string().required('Password is required')
 })
 
 const SignIn = () => {
@@ -57,15 +51,7 @@ const SignIn = () => {
       </View>
     )
   }
-  return (
-    <Formik
-      initialValues={{ username: '', password: '' }}
-      onSubmit={onSubmit}
-      validationSchema={validationSchema}
-    >
-      {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
-    </Formik>
-  )
+  return <SignInForm onSubmit={onSubmit} />
 }
 
 export default SignIn
