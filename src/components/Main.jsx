@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native'
 
 import { Route, Routes, Navigate } from 'react-router-native'
 import RepositoryList from './RepositoryList/RepositoryList'
-import AppBar from './AppBar'
+import AppBar from './AppBar/AppBar'
 import SignIn from './SignIn/SignIn'
 import theme from '../theme'
 

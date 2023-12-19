@@ -1,5 +1,5 @@
 import { Link } from 'react-router-native'
-import Text from './Text'
+import Text from '../common/Text'
 
 const AppBarTab = ({ text, route }) => {
   return (

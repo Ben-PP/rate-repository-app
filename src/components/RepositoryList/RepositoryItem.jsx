@@ -1,7 +1,7 @@
 import { StyleSheet, View, Image } from 'react-native'
 import theme from '../../theme'
-import Text from '../Text'
-import StatItem from '../StatItem'
+import Text from '../common/Text'
+import StatItem from './StatItem'
 
 const styles = StyleSheet.create({
   avatar: {
