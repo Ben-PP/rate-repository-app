@@ -1,8 +1,11 @@
-import { TextInput as NativeTextInput, StyleSheet } from 'react-native'
+import { TextInput as NativeTextInput, View, StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
+  container: {
+    width: '100%'
+  },
   textInput: {
-    width: '100%',
+    flexGrow: 1,
     borderWidth: 1,
     borderColor: 'grey',
     borderRadius: 5,
@@ -17,7 +20,11 @@ const styles = StyleSheet.create({
 const TextInput = ({ style, error, ...props }) => {
   const textInputStyle = [styles.textInput, error && styles.error, style]
 
-  return <NativeTextInput style={textInputStyle} {...props} />
+  return (
+    <View style={styles.container}>
+      <NativeTextInput style={textInputStyle} {...props} />
+    </View>
+  )
 }
 
 export default TextInput

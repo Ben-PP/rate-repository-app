@@ -2,6 +2,7 @@ const theme = {
   colors: {
     textPrimary: '#FBFBFF',
     textSecondary: '#023436',
+    textTertiary: '#888888',
     primary: '#023436',
     secondary: '#00BFB3',
     tertiary: '#037971',
