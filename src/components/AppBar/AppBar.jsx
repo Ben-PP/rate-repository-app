@@ -44,6 +44,7 @@ const AppBar = () => {
       <View style={styles.tabRow}>
         <AppBarTab text='Repositories' route='/' />
         {data.me && <AppBarTab text='Create a review' route='review' />}
+        {data.me && <AppBarTab text='My reviews' route='myreviews' />}
         <AppBarTab text={data.me ? 'Sign out' : 'Sign in'} route='signin' />
         {!data.me && <AppBarTab text='Sign up' route='signup' />}
       </View>

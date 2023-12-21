@@ -17,12 +17,14 @@ const styles = StyleSheet.create({
   }
 })
 
-const TextInput = ({ style, error, ...props }) => {
+const TextInput = ({ style, error, leading, trailing, ...props }) => {
   const textInputStyle = [styles.textInput, error && styles.error, style]
 
   return (
     <View style={styles.container}>
+      {leading}
       <NativeTextInput style={textInputStyle} {...props} />
+      {trailing && trailing}
     </View>
   )
 }

@@ -4,7 +4,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
-    "start": "expo start",
+    "start": "expo start -c",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -16,6 +16,7 @@
     "@expo/metro-config": "^0.4.0",
     "@expo/webpack-config": "^0.17.0",
     "@react-native-async-storage/async-storage": "^1.21.0",
+    "@react-native-picker/picker": "2.4.2",
     "dotenv": "^16.3.1",
     "expo": "~46.0.21",
     "expo-font": "^11.6.0",
@@ -26,9 +27,11 @@
     "graphql": "^15.8.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-icons": "^4.12.0",
     "react-native": "0.69.9",
     "react-native-web": "~0.18.7",
     "react-router-native": "^6.20.1",
+    "use-debounce": "^10.0.0",
     "yup": "^1.3.2"
   },
   "devDependencies": {

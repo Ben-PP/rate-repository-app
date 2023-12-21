@@ -19,6 +19,7 @@ export default {
     supportsTablet: true
   },
   android: {
+    supportsRtl: 'true',
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon.png',
       backgroundColor: '#FFFFFF'

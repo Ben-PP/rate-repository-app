@@ -16,16 +16,28 @@ const styles = StyleSheet.create({
   }
 })
 
-const Button = ({ onPress, text, width, style, ...props }) => {
+const Button = ({
+  onPress,
+  text,
+  width,
+  textColor,
+  color,
+  style,
+  ...props
+}) => {
   const containerStyle = [
     styles.container,
     width === 'full' && { width: '100%' }
   ]
-  const buttonStyle = [styles.button, style]
+  const buttonStyle = [
+    styles.button,
+    color === 'red' && { backgroundColor: 'red' },
+    style
+  ]
   return (
     <View style={containerStyle}>
       <Pressable style={buttonStyle} onPress={onPress} {...props}>
-        <Text>{text}</Text>
+        <Text color={textColor}>{text}</Text>
       </Pressable>
     </View>
   )
